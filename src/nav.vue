@@ -3,7 +3,7 @@
 </script> 
 
 <template>
-  <nav>導覽列</nav>
+  <nav>新導覽列!!</nav>
 
 </template>
 
