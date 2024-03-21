@@ -1,0 +1,23 @@
+{
+  "homepage": "https://shi-chika.github.io/todolist-v3/",
+  "name": "todolist-v3",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "gh-pages": "^6.1.1",
+    "vite": "^5.1.5"
+  }
+}
