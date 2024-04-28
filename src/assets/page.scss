@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Caveat&family=Chonburi&family=Diphylleia&family=Josefin+Sans:ital,wght@1,100..700&family=Kalam:wght@300;400&family=Kiwi+Maru&family=Klee+One&family=Krona+One&family=Mochiy+Pop+One&family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP&family=Protest+Strike&family=Shrikhand&family=Yusei+Magic&family=Zen+Kaku+Gothic+Antique&family=Zen+Kurenaido&display=swap');
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+  }  
+ .banner{
+   background-image: url('/img/BG06.jpg');
+   min-height:100vh;
+   padding-top: 40px;
+   padding-bottom: 40px;
+   
+ }
+.container{
+  max-width: 1400px;
+  padding-right: 16px;
+  padding-left: 16px;
+  margin: 0 auto;
+  
+}
+.note-group{
+  display:flex;
+  justify-content:center;
+  flex-wrap: wrap;
+  // border: #b22222 1px solid;
+  justify-content: space-evenly;
+}
+.note{
+  width: 20%;
+  margin: 1rem;
+  padding: 3rem 2rem;
+  border-radius: 3px;
+  // box-shadow: 1px 1px 2px 2px  #8b8b86;
+  
+  position: relative;
+  @include tablets{
+    width: 30%;
+  }
+  @include phones{
+    width: 47%;
+    margin: 0;
+    margin-bottom: 26px;
+    padding: 2rem 1.5rem;
+  }
+  .title{
+    font-family: "Yusei Magic", sans-serif;
+    margin-bottom: 16px;
+    text-align: center;
+    font-size:20px;
+    color:#333333;
+  }
+  .content{
+  
+    font-family: "Klee One", cursive;
+  }
+}
+  
+  
+ 
+  // 顏色
+  .yellow{
+    background-color: #eacc63;
+  }
+  .brown{
+    background-color: #ad9a7b;
+  }
+  .gray{
+    background-color: #a3a38b;
+  }
+  .beige{
+    background-color: #eedac2;
+  }
+  .pink{
+    background-color: #e8b59b;
+  }
+  .lightGray{
+    background-color: #c8baa7;
+  }
+
+  .input-group {
+    width:40%;
+    margin: 56px auto;
+    // border: #b22222 1px solid;
+    @include tablets{
+        width: 60%;
+    }
+    @include phones{
+      width: 80%;
+    }
+  }
+    input,
+    textarea,
+    select,
+    .addBtn {
+      display:block;
+      width: 100%;
+      padding: 8px;
+      margin-bottom:24px;
+      border-radius: 3px;
+      border:1px solid #c8baa7;
+      font-family: "Noto Sans JP", sans-serif;
+      border: none;
+      border-bottom:3px solid #98928a;
+    }
+  .addBtn{
+    background-color:#c4972f;
+    background-color: #8b4513;
+    cursor: pointer;
+    transition: all .2s;
+    border:none;
+    color: #fff;
+  }
+  .addBtn:hover{
+    background-color: #ae6a3a;
+  }
+  .addBtn:active{
+    box-shadow: none;
+  }
+  input:focus,
+  textarea:focus{
+    outline: 1px solid #b4a468;
+    border:1px solid #b4a468;
+  }
+  .delBtn {
+    background-color: transparent; 
+    border: none; 
+    text-decoration: none; 
+   
+    position: absolute;
+    top:-12px;
+    right:0px;
+    cursor:pointer;
+    i{
+      font-size: 24px;
+      color: #333333;
+    }
+  }
+  .delBtn:hover i{
+   color: #b22222;
+  }

@@ -6,7 +6,7 @@ import mainContent from "./main.vue";
 
 <template>
   <navContent></navContent>
- <mainContent></mainContent>
+  <mainContent></mainContent>
 </template>
 
 <style scoped>

@@ -3,19 +3,19 @@
 
   const notes = ref([
                      {
-                       title: "春節行程安排",
-                       content: "吃飽睡，睡飽吃",
-                       color: "red",
+                       title: "社内業務",
+                       content: "事務処理や、在庫状況の問い合わせなど",
+                       color: "brown",
                      },
                      {
-                       title: "工作待辦事項",
-                       content: "詢問各家廠商報價",
-                       color: "green",
+                       title: "営業訪問",
+                       content: "取引先の事業所を訪問し、商談を行う",
+                       color: "gray",
                      },
                      {
-                       title: "運動健身計畫",
-                       content: "每天早上六點去健身",
-                       color: "blue",
+                       title: "朝礼",
+                       content: "部署の朝礼に参加し、全社の営業目標の進捗などを確認",
+                       color: "beige",
                      },
                    ]);
 
@@ -24,6 +24,15 @@
   let getColor = ref("");
 
   let add = function(){
+  if (!getTitle.value || !getContent.value) {
+    alert('タイトルと内容を両方入力してください');
+    return;
+  }
+  else if (!getColor.value ) {
+    alert('カラーを選択してください');
+    return;
+  }
+  else{
     notes.value.push({
       title: getTitle.value,
       content: getContent.value,
@@ -34,6 +43,8 @@
     getColor.value = "";
   };
 
+  }
+    
   const deleteBtn = function(index){
     notes.value.splice(index, 1);
   }
@@ -56,121 +67,48 @@
 
 <template>
  
- <div class="container">
-    <div class="input-group">
-      <input v-model="getTitle" type="text" placeholder="標題"> 
-      <textarea v-model="getContent" placeholder="內容"></textarea>
+ <div class="banner">
+    <div class="container">
+      <div class="input-group">
+        <input v-model="getTitle" type="text" placeholder="タイトル"> 
+        <textarea v-model="getContent" placeholder="内容"></textarea>
 
-        <select v-model="getColor">
-          <option value="" selected disabled >選擇顏色</option>
-          <option value="red">紅</option>
-          <option value="green">綠</option>
-          <option value="blue">藍</option>
-        </select>
+          <select v-model="getColor">
+            <option value="" selected disabled >カラーを選択</option>
+            <option value="yellow">黄色</option>
+            <option value="brown">茶色</option>
+            <option value="gray">灰色</option>
+            <option value="beige">ベージュ</option>
+            <option value="pink">ピンク</option>
+            <option value="lightGray">ライト・グレイ</option>
+          </select>
 
-        <button class="addBtn" @click="add">新增</button>
+          <button class="addBtn" @click="add">追加</button>
 
-    </div>
-    <div class="note-group">
-      <div v-for="(item, index) in notes" class = "note" :class="item.color" :key="index" >
-        <h3 class="title">
-         {{ item.title }}
-        </h3>
-        <p class="content">
-           {{ item.content }}
-        </p>
-       <button class="delBtn" @click="deleteBtn(index)"> X </button>
+      </div>
+
+      <div class="note-group">
+        <div v-for="(item, index) in notes" class = "note" :class="item.color" :key="index" >
+          <h3 class="title">
+          {{ item.title }}
+          </h3>
+          <p class="content">
+            {{ item.content }}
+          </p>
+        <button class="delBtn" @click="deleteBtn(index)"> <i class="fa-regular fa-circle-xmark"></i></button>
+        </div>
       </div>
     </div>
+
+    
   </div>
 
 </template>
 
 <style scoped>
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    letter-spacing: 1px;
-  }
- .container{
+ /* .container{
+   
    background-color:#efe5ca;
-   min-height:100vh;
-   margin:0 auto;
-   padding:12px;
-
-
- }
-  .note-group{
-    display:flex;
-    justify-content:center;
-  }
-  .note{
-    margin: 1rem;
-    text-align: center;
-    padding: 2rem;
-    border-radius: .5rem;
-    box-shadow: 2px 2px 2px 3px #49462c;
-    position: relative;
-  }
-  h3{
-    font-size:20px;
-    color:#333333;
-  }
-  .red{
-   background-color: #d9a891;
-  }
-  .green{
-    background-color: #b4cf8f;
-  }
-  .blue{
-    background-color: #b9d0d0;
-  }
-  .input-group {
-    width: 650px;
-    margin: 56px auto;
-  }
-    input,
-    textarea,
-    select,
-    .addBtn {
-      display:block;
-      width: 100%;
-      padding: 8px;
-      margin-bottom:12px;
-      border-radius: 3px;
-      border:1px solid #c8baa7;
-    }
-  .addBtn{
-    background-color:#c4972f;
-    cursor:pointer;
-    transition: all .2s;
-    border:none;
-  }
-  .addBtn:hover{
-    box-shadow: 4px 3px 2px #49462c;
-  }
-  .addBtn:active{
-    box-shadow: none;
-  }
-  input:focus,
-  textarea:focus{
-    outline: 1px solid #b4a468;
-    border:1px solid #b4a468;
-  }
-  .delBtn{
-    font-weight:bold;
-    padding:8px 10px;
-    color:#ffffff;
-    background-color: #999999;
-    border:none;
-    border-radius: 15px;
-    position: absolute;
-    top:-12px;
-    right:-12px;
-    cursor:pointer;
-  }
-  .delBtn:hover{
-    background-color: #b7282d;
-  }
+   
+ } */
 </style>
